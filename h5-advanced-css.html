@@ -76,8 +76,8 @@
       <section>
         <ul>
           <li>文档流</li>
-          <li>DISPLAY</li>
-          <li>盒模型</li>
+          <!--<li>DISPLAY</li>-->
+          <!--<li>盒模型</li>-->
           <li>POSITION</li>
           <li>选择器</li>
           <li>优先级</li>
@@ -109,6 +109,7 @@
         </div>
       </section>
 
+      <!--box-model-->
       <section class="box-model">
         <h2>盒模型</h2>
         <img src="images/lesson-two/box-model.png" style="width: 300px;"/>
@@ -174,28 +175,26 @@
         <img src="images/lesson-two/position.png" style="width: 700px;"/>
       </section>
 
-      <section class="float">
-        <h2>FLOAT: LEFT/RIGHT/NONE</h2>
-        <img src="images/lesson-two/float.png" alt="" style="width:600px;"/>
-      </section>
-
-      <section class="float">
-        <h2>FLOAT</h2>
-        <img src="images/lesson-two/clear-float.png" alt="" style="width:600px;"/>
-      </section>
-
-      <section class="float">
-        <h2>清除浮动</h2>
-        <img src="images/lesson-two/clear-float2.png" alt="" style="width: 600px;"/>
-      </section>
-
-      <section class="float">
-        <h2>浮动子元素撑开父元素</h2>
-        <img src="images/lesson-two/clear-float3.png" alt="" style="width:700px;"/>
-      </section>
+      <!--<section class="float">-->
+        <!--<h2>FLOAT: LEFT/RIGHT/NONE</h2>-->
+        <!--<img src="images/lesson-two/float.png" alt="" style="width:600px;"/>-->
+      <!--</section>-->
+      <!--<section class="float">-->
+        <!--<h2>FLOAT</h2>-->
+        <!--<img src="images/lesson-two/clear-float.png" alt="" style="width:600px;"/>-->
+      <!--</section>-->
+      <!--<section class="float">-->
+        <!--<h2>清除浮动</h2>-->
+        <!--<img src="images/lesson-two/clear-float2.png" alt="" style="width: 600px;"/>-->
+      <!--</section>-->
+      <!--<section class="float">-->
+        <!--<h2>浮动子元素撑开父元素</h2>-->
+        <!--<img src="images/lesson-two/clear-float3.png" alt="" style="width:700px;"/>-->
+      <!--</section>-->
 
       <section class="selector">
         <h2>CSS选择器</h2>
+
         <ul>
           <li>*</li>
           <li>标签：h1, p, div</li>
@@ -208,10 +207,118 @@
         <h2>CSS选择器</h2>
         <ul>
           <li>属性：img[src='...']</li>
-          <li>伪类：:hover :first-child :last-child nth-child(n) :only-child :checked...</li>
           <li>+ ></li>
+          <li>伪类</li>
         </ul>
       </section>
+      
+      <section class="selector">
+        <h2>伪类: A</h2>
+        <ul>
+          <li>:link  链接没有被访问时</li>
+          <li>:visited  链接被访问过后</li>
+          <li>:hover 鼠标悬浮在链接上时</li>
+          <li>:active 鼠标点中激活链接那一刻</li>
+        </ul>
+        <p style="font-size: 28px; color: yellow;">a:hover {color: red;}</p>
+        <p>:hover在IE6下只有a元素支持，:active, ：focusIE7-6不支持</p>
+        <!--<div>-->
+          <!--<a href="http://www.baidu.com" id="a-element">Element</a>-->
+        <!--</div>-->
+      </section>
+
+      <section class="selector">
+        <h2>伪类: FORM</h2>
+        <ul>
+          <li>:enabled</li>
+          <li>:disabled</li>
+          <li>:checked</li>
+          <li>:unchecked</li>
+        </ul>
+        <p style="font-size: 28px; color: yellow;">input[type="text"]:disabled {border:1px solid #999;}</p>
+        <p>IE6-8不支持":checked",":enabled",":disabled"这三种选择器</p>
+      </section>
+
+      <section class="selector">
+        <h2>CSS3伪类</h2>
+        <ul>
+          <li>:first-child   :last-child</li>
+          <li>:nth-child()  :nth-last-child()</li>
+          <li>:nth-of-type()   :nth-last-of-type()</li>
+          <li>:first-of-type  :last-of-type</li>
+          <li>:only-child :only-of-type</li>
+          <li>:empty</li>
+          <li>:not</li>
+        </ul>
+      </section>
+
+      <section class="selector">
+        <h2>:FIRST-CHILD</h2>
+        <ul>
+          <li>选择某个元素的第一个子元素/最后一个子元素</li>
+        </ul>
+        <p style="font-size: 28px; color: yellow;">.demo li:first-child {background: green;}</p>
+      </section>
+
+      <section class="selector">
+        <h2>:nth-child()</h2>
+        <ul>
+          <li>:nth-child(length) <span style="font-size:16px;">/*参数是具体数字*/</span></li>
+          <li>:nth-child(n) <span style="font-size:16px;">/*参数是n,n从0开始计算*/</span> </li>
+          <li>:nth-child(n*length) <span style="font-size:16px;">/*n的倍数选择，n从0开始算*/</span></li>
+          <li>:nth-child(n+length) <span style="font-size:16px;">/*选择大于length后面的元素*/</span></li>
+          <li>:nth-child(-n+length) <span style="font-size:16px;">/*选择小于length前面的元素*/</span></li>
+          <li>:nth-child(n*length+1) <span style="font-size:16px;">/*表示隔几选一*/</span></li>
+        </ul>
+        <p style="font-size: 28px; color: yellow;">.demo li:nth-child(3n) {background: green;}</p>
+      </section>
+
+      <section class="selector">
+        <h2>:nth-of-type()</h2>
+        <p style="font-size: 28px; color: yellow;">.demo span:nth-of-type(3n) {background: green;}</p>
+      </section>
+
+      <section class="selector">
+        <h2>:first-of-type</h2>
+        <p style="font-size: 28px; color: yellow;">.demo span:first-of-type {background: green;}</p>
+      </section>
+
+      <section class="selector">
+        <h2>:only-child</h2>
+        <p style="font-size: 28px; color: yellow;">.demo span:only-child {background: green;}</p>
+      </section>
+
+
+      <section class="selector">
+        <h2>:only-of-type</h2>
+        <p style="font-size: 28px; color: yellow;">.demo span:only-of-type {background: green;}</p>
+      </section>
+
+      <section class="selector">
+        <h2>:empty</h2>
+        <p style="font-size: 28px; color: yellow;">p:empty {display: none;}</p>
+      </section>
+
+      <section class="selector">
+        <h2>:not</h2>
+        <p style="font-size: 28px; color: yellow;">input:not([type="submit"]) {border: 1px solid red;}</p>
+      </section>
+
+      <section class="selector">
+        <h2>伪元素</h2>
+        <ul>
+          <li>::first-line</li>
+          <li>::first-letter</li>
+          <li>::before</li>
+          <li>::after</li>
+        </ul>
+      </section>
+
+      <section class="selector">
+        <h2>伪元素</h2>
+        <img src="images/lesson-two/clearfix.png" alt="" style="width:700px;"/>
+      </section>
+
 
       <section class="priority">
         <h2>CSS优先级</h2>
@@ -249,8 +356,6 @@
         <h2>ADVANCED CSS</h2>
         <ul>
           <li>文档流</li>
-          <li>DISPLAY</li>
-          <li>盒模型</li>
           <li>POSITION</li>
           <li>选择器</li>
           <li>优先级</li>
