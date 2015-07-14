@@ -14,117 +14,348 @@
   <!-- Any section element inside of this container is displayed as a slide -->
   	<div class="slides">
   		<section>
-        <p><strong>Thought</strong>Works<sup style="font-size: 14px">&reg;</sup></p>
+        <p  style="color: #f04e98;"><strong>Thought</strong>Works<sup style="font-size: 14px">&reg;</sup></p>
   			<h2>CSS3</h2>
         <small>Presented by</small>
-        <p>Si Xiaojing aka Sarah</p>
+        <p>Xie Jia</p>
   		</section>
-        <section>
-          <div data-markdown>
-            <script type="text/template" >
-              border-radius
-              ```css
-                border-radius:10px;
-                -moz-border-radius:10px; /* old Firefox */
-                -ms-border-radius:10px; /* old IE */
-                -webkit-border-radius:10px; /* old Chrome */
-              ```
-            </script>
-          </div>
-          <p style="border: 1px solid #f04e98; border-radius: 8px;padding:10px;">border radius allow you add rounded corner</p>
-        </section>
+     <section class="agenda">
+       <ul>
+         <li>Box Model</li>
+         <li>Backgrounds and Borders</li>
+         <li>Text Effects</li>
+         <li>2D/3D Transformations</li>
+         <li>Animations</li>
+         <li>Multiple Column Layout</li>
+       </ul>
+     </section>
+     <section class="box-sizing">
+       <section>
+         <p>Box Model</p>
+       </section>
+       <section class="box-sizing">
+         <div data-markdown>
+           <script type="text/template">
+             box-sizing
+             ```css
+             width: 200px;
+             height: 200px;
+             padding: 20px;
+             box-sizing: border-box;
+             ```
+           </script>
+         </div>
+         <div style="width: 600px; margin: 0 auto;">
+           <div style="float: left;margin-right: 100px;width: 200px; height: 200px; padding: 20px; border: solid 5px red;"></div>
+           <div style="float: left;width: 200px; height: 200px; padding: 20px; border: solid 5px red; box-sizing: border-box;"></div>
+         </div>
 
-        <section>
-          <div data-markdown>
-            <script type="text/template" >
-              box-shadow
-              ```css
-              background-color:#ff9900;
-              -webkit-box-shadow: 0px 0px 8px 3px #888888; /* Old Chrome*/
-              -moz-box-shadow: 0px 0px 8px 3px #888888; /* Old Firefox */
-              box-shadow: 0px 0px 8px 3px #888888;
-              ```
-            </script>
-          </div>
-          <p style="background: #f04e98; #eaa353: black;box-shadow: 0px 0px 8px 4px white;border-radius: 8px; padding:5px;">This box has a white shadow</p>
-        </section>
+       </section>
 
-        <section>
-          <div data-markdown>
-            <script type="text/template" >
-              text-shadow
-              ```css
-                text-shadow: 2px 2px 3px #f04e98;
-                -moz-text-shadow: 2px 2px 3px #f04e98; /* old Firefox */
-                -webkit-text-shadow: 2px 2px 3px #f04e98; /* old Chrome */
-              ```
-            </script>
-          </div>
-          <p style="text-shadow: 5px 5px 5px #f04e98; color: white;">This text has shadow</p>
-        </section>  
+     </section>
+     <section class="border">
+       <section><p>Border</p></section>
+       <section class="border-radius">
+         <div data-markdown>
+           <script type="text/template">
+             border-radius
+             ```css
+             border-radius:10px;
+             -moz-border-radius:10px; /* old Firefox */
+             -ms-border-radius:10px; /* old IE */
+             -webkit-border-radius:10px; /* old Chrome */
+             ```
+           </script>
+         </div>
+         <p style="border: 1px solid #f04e98; border-radius: 8px;padding:10px;">border radius allow you add rounded
+           corner</p>
+       </section>
+       <section class="border-image">
+         <div data-markdown>
+           <script type="text/template">
+             border-image
+             ```css
+             width:40px;
+             padding:5px 10px;
+             border:10px solid transparent;
+             border-image: url(/i/border_image_button.png) 0 14 0 14 stretch;
+             border-image-outset: 10px;
+             ```
+           </script>
+         </div>
+         <p style="background: #f04e98;
+           border: 15px solid transparent;
+           border-image: url('images/lesson-three/button.png') 15 15 stretch;
+           border-image-outset: 10px;">
+           This box has a border image</p>
+       </section>
+     </section>
+     <section class="background">
+       <section><p>Background</p></section>
+       <section class="multi-background">
+         <div data-markdown>
+           <script type="text/template">
+             multiple backgrounds
+             ```css
+             padding: 15px;
+             background-image: url(img_flwr.gif), url(paper.gif);
+             background-position: right bottom, left top;
+             background-repeat: no-repeat, repeat;
+             ```
+           </script>
+         </div>
+         <p
+           style="color: green; padding: 15px; background-image: url('images/lesson-three/flower.gif'), url('images/lesson-three/background.gif'); background-position: right bottom, left top; background-repeat: no-repeat, repeat;">
+           This box has two background images.</p>
+       </section>
+       <section class="background-size">
+         <div data-markdown>
+           <script type="text/template">
+             background-size
+             ```css
+             background-image: url(big-flower.gif);
+             background-repeat: no-repeat;
+             background-size: contain;
+             ```
+           </script>
+         </div>
+         <p
+           style="color: green; padding: 15px; background-image: url('images/lesson-three/big-flower.jpg'); background-repeat: no-repeat;background-size: contain;">
+           This box has a background image which size is contain.</p>
+         <div data-markdown>
+           <script type="text/template">
+             ```css
+             background-image: url(big-flower.gif);
+             background-repeat: no-repeat;
+             background-size: cover;
+             ```
+           </script>
+         </div>
+         <p
+           style="color: green; padding: 15px; background-image: url('images/lesson-three/big-flower.jpg'); background-repeat: no-repeat;background-size: cover;">
+           This box has a background image which size is cover.</p>
+       </section>
+       <section class="background-origin">
+         <div data-markdown>
+           <script type="text/template">
+             background-origin
+             ```css
+             border: 10px solid black;
+             padding:35px;
+             background:url(img_flwr.gif);
+             background-repeat: no-repeat;
+             background-origin: contain-box;
+             ```
+           </script>
+         </div>
+         <p
+           style="color: green; padding: 15px; border: solid 2px white; background-image: url('images/lesson-three/big-flower.jpg'); background-size: contain; background-origin: content-box; background-repeat: no-repeat; height: 100px;">
+           </p>
+       </section>
+       <section class="background-clip">
+         <div data-markdown>
+           <script type="text/template">
+             background-clip
+             ```css
+             border: 10px dotted orange;
+             padding:35px;
+             background: yellow;
+             background-clip: border-box;
+             ```
+           </script>
+         </div>
+         <p
+           style="color: green; padding: 15px; background: yellow; border: 10px dotted orange; background-clip: border-box;
+                        padding:35px;">This is a box with background clip border-box;
+         </p>
+       </section>
+       <section class="background-clip">
+                <div data-markdown>
+                  <script type="text/template">
+                    background-clip
+                    ```css
+                    border: 10px dotted orange;
+                    padding:35px;
+                    background: yellow;
+                    background-clip: padding-box;
+                    ```
+                  </script>
+                </div>
+                <p
+                  style="color: green; padding: 15px; background: yellow; border: 10px dotted orange; background-clip: padding-box;
+                               padding:35px;">This is a box with background clip padding-box;
+                </p>
+              </section>
+       <section class="background-clip">
+                       <div data-markdown>
+                         <script type="text/template">
+                           background-clip
+                           ```css
+                           border: 10px dotted orange;
+                           padding:35px;
+                           background: yellow;
+                           background-clip: content-box;
+                           ```
+                         </script>
+                       </div>
+                       <p
+                         style="color: green; padding: 15px;
+                                      background: yellow; border: 10px dotted orange;
+                                background-clip: content-box;
+                                      padding:35px;">This is a box with background clip content-box;
+                       </p>
+                     </section>
+     </section>
+     <section class="shadow">
+       <section><p>shadow</p></section>
+       <section class="box-shadow">
+         <div data-markdown>
+           <script type="text/template">
+             box-shadow
+             ```css
+             background-color:#ff9900;
+             -webkit-box-shadow: 0px 0px 8px 3px #888888; /* Old Chrome*/
+             -moz-box-shadow: 0px 0px 8px 3px #888888; /* Old Firefox */
+             box-shadow: 0px 0px 8px 3px #888888;
+             ```
+           </script>
+         </div>
+         <p
+           style="background: #f04e98; box-shadow: 0px 0px 8px 4px white;border-radius: 8px; padding:5px;">
+           This box has a white shadow</p>
+       </section>
+       <section>
+         <div data-markdown>
+           <script type="text/template">
+             text-shadow
+             ```css
+             text-shadow: 2px 2px 3px #f04e98;
+             -moz-text-shadow: 2px 2px 3px #f04e98; /* old Firefox */
+             -webkit-text-shadow: 2px 2px 3px #f04e98; /* old Chrome */
+             ```
+           </script>
+         </div>
+         <p style="text-shadow: 5px 5px 5px #f04e98; color: white;">This text has shadow</p>
+       </section>
+     </section>
+     <section class="color">
+       <section>color</section>
+       <section class="rgba">
+         <p>rgba</p>
+         <div data-markdown>
+           ```css
+           background-color: rgba(255, 255, 255, 0.3);
+           ```
+         </div>
+         <img src="images/rgba.png" alt="">
+       </section>
+       <section class="hsla">
+         <p>hsla</p>
+         <div data-markdown>
+           ```css
+           background-color: hsla(120, 50%, 50%, .8);
+           ```
+         </div>
+         <div style="width:80%; height: 50px; background-color: hsla(120, 50%, 50%, .8); margin:0 auto;"></div>
+         <img src="images/lesson-three/hsl.png" width="300"/>
+       </section>
+     </section>
+     <section class="gradient">
+       <section>gradient</section>
+       <section>
+         <p>linear-gradient</p>
+         <div data-markdown>
+           ```css
+           background: -webkit-linear-gradient(left, red , blue); /* For Safari 5.1 to 6.0 */
+           background: -o-linear-gradient(right, red, blue); /* For Opera 11.1 to 12.0 */
+           background: -moz-linear-gradient(right, red, blue); /* For Firefox 3.6 to 15 */
+           background: linear-gradient(to right, red , blue); /* Standard syntax */
+           ```
+         </div>
+         <div style="background: linear-gradient(to right, red , blue); height: 100px;"></div>
+       </section>
+       <section>
+         <p>linear-gradient</p>
+         <div data-markdown>
+           ```css
+           background: -webkit-linear-gradient(red 10%, green 85%, blue 90%); /* For Safari 5.1 to 6.0 */
+           background: -o-linear-gradient(red 10%, green 85%, blue 90%); /* For Opera 11.1 to 12.0 */
+           background: -moz-linear-gradient(red 10%, green 85%, blue 90%); /* For Firefox 3.6 to 15 */
+           background: linear-gradient(red 10%, green 85%, blue 90%); /* Standard syntax (must be last) *
+           ```
+         </div>
+         <div style="background: linear-gradient(red 10%, green 85%, blue 90%); height: 100px;"></div>
+       </section>
+       <section>
+         <p>radial-gradient</p>
+         <div data-markdown>
+           ```css
+           background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari */
+           background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 to 12.0 */
+           background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 to 15 */
+           background: radial-gradient(circle, red, yellow, green); /* Standard syntax */
+           ```
+         </div>
+         <div style="background: radial-gradient(circle, red, yellow, green); color: black; height: 200px; width: 200px; margin: 0 auto;"></div>
+       </section>
+       <section>
+         <p>radial-gradient</p>
+         <div data-markdown>
+           ```css
+           background: -webkit-repeating-radial-gradient(red, yellow 10%, green 15%); /* For Safari 5.1 to 6.0 */
+           background: -o-repeating-radial-gradient(red, yellow 10%, green 15%); /* For Opera 11.6 to 12.0 */
+           background: -moz-repeating-radial-gradient(red, yellow 10%, green 15%); /* For Firefox 3.6 to 15 */
+           background: repeating-radial-gradient(red, yellow 10%, green 15%); /* Standard syntax (must be last) */
+           ```
+         </div>
+         <div style="background: repeating-radial-gradient(red, yellow 10%, green 15%); color: black; height: 200px; width: 200px; margin: 0 auto;"></div>
+       </section>
+     </section>
 
-        <section>
-          <p>word-wrap</p>
-          <div data-markdown>
-          ```css
-            word-wrap: break-word;
-          ```
-          </div>
-          <img src="images/word-wrap.png" alt="">
-        </section>              
-
-
-        <section>
-          <p>opacity</p>
-        </section>
-        
-        <section>
-          <p>rgba</p>
-          <div data-markdown>
-          ```css
-            background-color: rgba(255, 255, 255, 0.3);
-          ```
-          </div>
-          <img src="images/rgba.png" alt="">
-        </section>
-
-        <section>
-          <p>2D & 3D transform</p>
-          <ul>
-            <li>translate()</li>
-            <li>rotate()</li>
-            <li>scale()</li>
-            <li>rotateX()</li>
-            <li>rotateY()</li>
-          </ul>
-          <br>
-          <a href="example/2d-transform.html" target="_blank">Example</a>
-        </section>
-
-        <section>
-          <p>transition</p>
-          <br>
-          <a href="example/transition.html" target="_blank">Example</a>
-        </section>
-
-        <section>
-          <p>@keyframes</p>
-          <br>
-          <a href="example/keyframe.html" target="_blank">Example</a>          
-        </section>
-        
-        <section>
-          <h3>CSS Compatibility</h3>
-          <ul>
-            <li>-moz-*</li>
-            <li>-webkit-</li>
-            <li>-ms-</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Thank you</h2>
-        </section>
+     <section class="word-wrap">
+       <p>word-wrap</p>
+       <div data-markdown>
+         ```css
+         word-wrap: break-word;
+         ```
+       </div>
+       <img src="images/word-wrap.png" alt="">
+     </section>
+     <section class="transform">
+       <p>2D & 3D transform</p>
+       <ul>
+         <li>translate()</li>
+         <li>rotate()</li>
+         <li>scale()</li>
+         <li>rotateX()</li>
+         <li>rotateY()</li>
+       </ul>
+       <br>
+       <a href="example/2d-transform.html" target="_blank">Example</a>
+     </section>
+     <section class="transition">
+       <p>transition</p>
+       <br>
+       <a href="example/transition.html" target="_blank">Example</a>
+     </section>
+     <section class="keyframe">
+       <p>@keyframes</p>
+       <br>
+       <a href="example/keyframe.html" target="_blank">Example</a>
+     </section>
+     <section class="font-icon">
+       <p>font icon</p>
+       <ul style="margin-bottom: 20px;">
+         <li>fontello</li>
+         <li>font awesome</li>
+         <li>...</li>
+       </ul>
+       <a style="display: block;" href="http://fontello.com/" target="_blank">Example</a>
+     </section>
+     <section>
+           <h2>Thank you</h2>
+           <p style="color: #f04e98;">jiaxie@thoughtworks.com</p>
+         </section>
   	</div>
   </div>
 
